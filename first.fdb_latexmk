@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1709100691.65081 "e:/Python/first.tex" "first.pdf" "first" 1709100692.28984 0
+["pdflatex"] 1709101799.17821 "e:/Python/first.tex" "first.pdf" "first" 1709101799.83184 0
   "C:/Users/HP/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1709055785 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/HP/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1708837802 24223630 cb6f96efb7921a716991bf3b42f29dfb ""
   "C:/Users/HP/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmbx10.tfm" 1136765053 1328 c834bbb027764024c09d3d2bf908b5f0 ""
@@ -59,11 +59,11 @@
   "C:/Users/HP/AppData/Local/Programs/MiKTeX/tex/latex/refcount/refcount.sty" 1576433952 9878 9e94e8fa600d95f9c7731bb21dfb67a4 ""
   "C:/Users/HP/AppData/Local/Programs/MiKTeX/tex/latex/rerunfilecheck/rerunfilecheck.sty" 1657800696 9714 ba3194bd52c8499b3f1e3eb91d409670 ""
   "C:/Users/HP/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
-  "e:/Python/first.tex" 1709100691 9503 f3d991580a257ae5a81e2e4a4212b769 ""
-  "first.aux" 1709100692 3719 a37eee839c5f9872fa6ddefca8251b6e "pdflatex"
-  "first.out" 1709100692 3000 e9753e399c80c9c1d8cde75fb204d305 "pdflatex"
-  "first.tex" 1709100691 9503 f3d991580a257ae5a81e2e4a4212b769 ""
-  "first.toc" 1709100692 2190 aaa99e34e4857e5e1ff9f97cff096dd9 "pdflatex"
+  "e:/Python/first.tex" 1709101798 9498 104d37bbd2feb3782ff37ccc2c9a97c6 ""
+  "first.aux" 1709101799 3719 a37eee839c5f9872fa6ddefca8251b6e "pdflatex"
+  "first.out" 1709101799 3000 e9753e399c80c9c1d8cde75fb204d305 "pdflatex"
+  "first.tex" 1709101798 9498 104d37bbd2feb3782ff37ccc2c9a97c6 ""
+  "first.toc" 1709101799 2190 aaa99e34e4857e5e1ff9f97cff096dd9 "pdflatex"
   (generated)
   "first.aux"
   "first.log"
