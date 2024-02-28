@@ -1,0 +1,8 @@
+
+For the function f(x) = x**3 - 2*x - 5,
+ for the initial value x0 = 2.00000,
+ the root approximation is 2.09455
+
+For the function f(x) = x*sin(x) + cos(x),
+ for the initial value x0 = 3.14160,
+ the root approximation is 2.79839

@@ -1,0 +1,5 @@
+To wrap --> Alt + z
+To select same word --> Ctrl + Shift + L
+To split --> Ctrl + \
+To hide left side menu --> Ctrl + b
+Comment Shortcut --> Ctrl + /
