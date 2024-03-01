@@ -1,5 +1,6 @@
 \documentclass[openany]{book}
 \usepackage{hyperref}
+\usepackage{listings}
 \setcounter{secnumdepth}{3}
 \setcounter{tocdepth}{3}
 \usepackage{geometry}
@@ -9,6 +10,13 @@
     top = 1in,
     bottom = 1in
 }
+\let\oldnormalsize\normalsize
+\renewcommand\normalsize{\large}
+
+\let\oldlarge\large
+\let\oldLarge\Large
+\let\oldLARGE\LARGE
+
 
 \title{Numerical Python}
 \author{Shishir Ahmed Saikat}
@@ -277,7 +285,67 @@ print(x) & for y in x: & for y in x: \\
 & print(y) & for z in y \\
 & & print(z) \\
 \hline
-\end{tabular}
+\end{tabular}\\
+
+
+Here for multidimensional array we need to write the loop again and again. To overcome this problem, we h ave \textbf(.nditer()) method. It go throuugh all the array and return all the element at a time. \\
+
+\section{Iterate with different Data Type}
+We can use \texttt{op\_dtypes} argument and pass it the expected datatype to change the datatype of elements while iterating.
+NumPy does not change the data type of the element in-place (where the element is in array) so it needs some other space to perform this action, that extra space is called buffer, and in order to enable it in \texttt{nditer()} we pass \texttt{flags=['buffered']}.
+
+\begin{lstlisting}[language=Python]
+import numpy as np
+
+arr = np.array([1, 2, 3])
+
+for x in np.nditer(arr, flags=['buffered'], opdtypes=['S']):
+    print(x)
+\end{lstlisting}
+
+\section{Iterating with Different Step size}
+Iterate through every scalalar element of the 2D array skipping 1 elements.\\
+arr = np.array([[1, 2, 3, 4], [5, 6, 7, 8]])\\
+
+for x in np.nditer(arr[:, ::2]):\\
+  print(x)
+
+\section{Enumerated Iteration}
+Enumeration means mentioning sequence number of somethings one by one.
+
+Sometimes we require corresponding index of the element while iterating, the ndenumerate() method can be used for those usecases. \\
+It returns element mentioining the position no. of each element. \\
+\begin{lstlisting}[language=Python]
+    import numpy as np
+
+arr = np.array([1, 2, 3])
+
+for x in np.nditer(arr, flags=['buffered'], op_dtypes=['S']):
+  print(x)
+\end{lstlisting}
+
+
+\chapter{Array Joining}
+Joining means putting contents of two or more arrays in a single array. We pass a sequence of arrays that we want to join to the concatenate() function, along with the axis. If axis is not explicitly passed, it is taken as 0. \\
+
+
+\begin{table}[htbp]
+    \centering
+    \begin{tabular}{|p{2cm}|p{10cm}|p{4cm}|}
+        \hline
+        Method & Example & Result \\
+        \hline
+        General Concatenate & \texttt{print("real concatenate", np.concatenate((arr, arr2)))} & [[1 2] [3 4] [5 6] [7 8]] \\ \hline
+        Concatenate & \texttt{print("concatenate:", np.concatenate((arr, arr2), axis=1))} & [[1 2 5 6] [3 4 7 8]] \\  \hline
+        Stack & \texttt{print("Stack:", np.stack((arr, arr2), axis=1))} & [[[1 2] [5 6]] [[3 4] [7 8]]] \\ \hline
+        hstack & \texttt{print("hstack", np.hstack((arr, arr2)))} & [[1 2 5 6] [3 4 7 8]] \\ \hline
+        vstack & \texttt{print("vstack", np.vstack((arr, arr2)))} & [[1 2] [3 4] [5 6] [7 8]] \\ \hline
+        dstack & \texttt{print("dstack", np.dstack((arr, arr2)))} & [[[1 5] [2 6]] [[3 7] [4 8]]] \\ \hline
+        \hline
+    \end{tabular}
+    \caption{Methods and their results}
+    \label{tab:methods_results}
+\end{table}
 
 \chapter{In Brief}
 
@@ -301,7 +369,12 @@ print(x) & for y in x: & for y in x: \\
     \item To reshape 2-D array $\rightarrow$ var.reshape(2,n) or reshahpe(2,-1)
     \item To reshape 3-D array $\rightarrow$ var.reshape(2,2,n) or reshahpe(2,2,-1)
     \item To reshape from multi-D to 1-D $\rightarrow$ var.reshape(-1)
+    \item Iterating in Multi-D $\rightarrow$ for x in np.nditer(arr)
+    \item Iterating with different step size $\rightarrow$ for x in np.nditer(arr[:,::2])
+    \item Enumerated iteration $\rightarrow$ for idx,x in np.ndenumerate(arr)
+    \item Iterating and also changing data types $\rightarrow$ for x in np.nditer(arr, flags=['buffered'], op\_dtypes=['S'])
 \end{enumerate}
+
 \newpage
 
 \section{Rights}
