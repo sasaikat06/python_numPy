@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1709102138.73356 "e:/Python/first.tex" "first.pdf" "first" 1709102139.34404 0
-  "C:/Users/HP/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1709055785 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
+["pdflatex"] 1709188829.46787 "e:/Python/first.tex" "first.pdf" "first" 1709188830.14806 0
+  "C:/Users/HP/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1709188403 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/HP/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1708837802 24223630 cb6f96efb7921a716991bf3b42f29dfb ""
   "C:/Users/HP/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmbx10.tfm" 1136765053 1328 c834bbb027764024c09d3d2bf908b5f0 ""
   "C:/Users/HP/AppData/Local/Programs/MiKTeX/fonts/tfm/public/cm/cmbx12.tfm" 1136765053 1324 c910af8c371558dc20f2d7822f66fe64 ""
@@ -31,6 +31,7 @@
   "C:/Users/HP/AppData/Local/Programs/MiKTeX/tex/generic/bitset/bitset.sty" 1575926576 33961 6b5c75130e435b2bfdb9f480a09a39f9 ""
   "C:/Users/HP/AppData/Local/Programs/MiKTeX/tex/generic/gettitlestring/gettitlestring.sty" 1576433666 8371 9d55b8bd010bc717624922fb3477d92e ""
   "C:/Users/HP/AppData/Local/Programs/MiKTeX/tex/generic/iftex/iftex.sty" 1643997108 7237 bdd120a32c8fdb4b433cf9ca2e7cd98a ""
+  "C:/Users/HP/AppData/Local/Programs/MiKTeX/tex/generic/iftex/ifvtex.sty" 1643997108 1057 525c2192b5febbd8c1f662c9468335bb ""
   "C:/Users/HP/AppData/Local/Programs/MiKTeX/tex/generic/infwarerr/infwarerr.sty" 1575399508 8356 7bbb2c2373aa810be568c29e333da8ed ""
   "C:/Users/HP/AppData/Local/Programs/MiKTeX/tex/generic/intcalc/intcalc.sty" 1576433764 31769 002a487f55041f8e805cfbf6385ffd97 ""
   "C:/Users/HP/AppData/Local/Programs/MiKTeX/tex/generic/kvdefinekeys/kvdefinekeys.sty" 1576763304 5412 d5a2436094cd7be85769db90f29250a6 ""
@@ -45,6 +46,8 @@
   "C:/Users/HP/AppData/Local/Programs/MiKTeX/tex/latex/base/bk10.clo" 1705273578 8288 82eb4750175f9093ea089563156e1d65 ""
   "C:/Users/HP/AppData/Local/Programs/MiKTeX/tex/latex/base/book.cls" 1705273578 23268 80674e17dbdc75804bd4d067e837600a ""
   "C:/Users/HP/AppData/Local/Programs/MiKTeX/tex/latex/etoolbox/etoolbox.sty" 1601897756 46845 3b58f70c6e861a13d927bff09d35ecbc ""
+  "C:/Users/HP/AppData/Local/Programs/MiKTeX/tex/latex/geometry/geometry.cfg" 1578053545 1104 7ac475a4e3466b0b43e138e9356bda83 ""
+  "C:/Users/HP/AppData/Local/Programs/MiKTeX/tex/latex/geometry/geometry.sty" 1578053545 42759 9cf6c5257b1bc7af01a58859749dd37a ""
   "C:/Users/HP/AppData/Local/Programs/MiKTeX/tex/latex/graphics/keyval.sty" 1665067579 2671 7e67d78d9b88c845599a85b2d41f2e39 ""
   "C:/Users/HP/AppData/Local/Programs/MiKTeX/tex/latex/hycolor/hycolor.sty" 1580380792 18571 4c28a13fc3d975e6e81c9bea1d697276 ""
   "C:/Users/HP/AppData/Local/Programs/MiKTeX/tex/latex/hyperref/hpdftex.def" 1701020798 48154 77bec99bb3bbdf933bcecb211f7f4038 ""
@@ -59,11 +62,11 @@
   "C:/Users/HP/AppData/Local/Programs/MiKTeX/tex/latex/refcount/refcount.sty" 1576433952 9878 9e94e8fa600d95f9c7731bb21dfb67a4 ""
   "C:/Users/HP/AppData/Local/Programs/MiKTeX/tex/latex/rerunfilecheck/rerunfilecheck.sty" 1657800696 9714 ba3194bd52c8499b3f1e3eb91d409670 ""
   "C:/Users/HP/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
-  "e:/Python/first.tex" 1709102138 9496 7c6f955431dbf6a37b20c68072861ec0 ""
-  "first.aux" 1709102139 3719 a37eee839c5f9872fa6ddefca8251b6e "pdflatex"
-  "first.out" 1709102139 3000 e9753e399c80c9c1d8cde75fb204d305 "pdflatex"
-  "first.tex" 1709102138 9496 7c6f955431dbf6a37b20c68072861ec0 ""
-  "first.toc" 1709102139 2190 aaa99e34e4857e5e1ff9f97cff096dd9 "pdflatex"
+  "e:/Python/first.tex" 1709188828 13914 167a39714449beb04ed40de8301b8411 ""
+  "first.aux" 1709188830 4643 66085e85a3a818c88c9fba512c53e232 "pdflatex"
+  "first.out" 1709188830 3962 6260c274aecc0331261c77096f75d169 "pdflatex"
+  "first.tex" 1709188828 13914 167a39714449beb04ed40de8301b8411 ""
+  "first.toc" 1709188830 2751 f964ac2b0b8f0ea5dd636633f7029aed "pdflatex"
   (generated)
   "first.aux"
   "first.log"

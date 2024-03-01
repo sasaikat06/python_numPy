@@ -1,5 +1,23 @@
 \documentclass[openany]{book}
 \usepackage{hyperref}
+\usepackage{listings}
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+\usepackage{geometry}
+\geometry{
+    left = 0.5in,
+    right= 0.5in,
+    top = 1in,
+    bottom = 1in
+}
+\let\oldnormalsize\normalsize
+\renewcommand\normalsize{\large}
+
+\let\oldlarge\large
+\let\oldLarge\Large
+\let\oldLARGE\LARGE
+
+
 \title{Numerical Python}
 \author{Shishir Ahmed Saikat}
 \date{\today}
@@ -199,6 +217,135 @@ Here the best way to change the data type of an existing array, is to make a cop
 newarr = arr.astype("i")
 
 \chapter{Array Shape}
+\section{Shape of Array}
+The shape of an array is the number of elements in each dimension. \\
+To get the shape of an array use the attribute \textit{shape}.\\
+If there is an array like : arr = np.array([[1,2,4,5],[1,4,5,6]]) and if we call it by arr.shape then it will return 2,4 . Here 2 is the number of array and 4 is the dimension. \\
+
+On the other hand, if we create an array like this, \\
+arr = np.array([1,2,3],ndmin=5) and print arr.shape then it will show us 1,1,1,1,3 . Here the written array will be at last!
+
+\section{Array Reshaping}
+Reshaping means changing the shape of an array, or convert the dimention. \\
+The shape of an array is the number of elements in each dimension. \\
+By reshaping we can add or remobe dimensions or change number of elements in each dimension. \\
+Note that, it is not a copy a copy it is view (See 2.4)
+\begin{enumerate}
+    \item [[1,2]] $\rightarrow$ 1-D 
+    \item [[1,2],[3,4]] $\rightarrow$ 2-D
+    \item [[[1,2],[2,3]]] $\rightarrow$ 3-D
+\end{enumerate}
+Simply, if we count the number of square brackets at begin , it will tell us the dimension ;\,)
+\subsection{From 1-D to 2-D}
+Suppose we have 12 elements in an array (1-D), now we want to separate them into two array(2-D). To do that ; \\
+arr = np.array([1,2,3,4,5,6,7,8,9,10,11,12]) \\
+newArray = arr.reshape(2,6) \\
+now, if we print newArray it will  return us [[ 1  3  5  6  7  8]
+[ 9  3 45  6  4  5]] \\
+arr.reshape(2,6), here 2 indicates the dimension of main array and 6 indicates the dimension of each nested array. 
+\subsection{From 1-D to 2-D}
+It is similar as before, but here we will pass 3 argument into \textit{reshape()} instead of 2 argument. \\
+e.g: arr.reshape(2,3,2)
+\\
+\textbf{Let, we have an array of \textit(x) number of elements and we want to reshape into \textit{n} dimension, but do not want to specify the number of element of each nested array then if we use -1 after defining dimention, NumPy will calculate the number of elements for each nested array!} \\
+\subsubsection*{Suppose, we have 16 elements in a single array(1-D), now if we want to convert them into 2-D array, then if we write .reshape(2,-1) then it will return us 2-D array [ 2 nested array, each having 8 elements]}
+
+\subsection{From 1-D to 3-D}
+It is similar as 4.2.2 , additionally we will define a 3-D array into reshape(3,2,2). If the number of elements into an array is 12 then for .reshape(3,2,2) will return us 3* 2-D array each of 2 elements, which is altogether a 3-D array. //
+Similar as before, if we do not want to define the number of elements in the nested(last) array we can use -1.
+
+\subsection{Multi-D to 1-D}
+To convert 2-D/3-D/...n-D array into 1-D array, we can use \textit{.reshape(-1)}. It is called Flattening. \\
+
+\textbf{NB:} There are a lot of functions for changing the shapes of arrays in numpy flatten, ravel and also for rearranging the elements rot90, flip, fliplr, flipud etc. These fall under Intermediate to Advanced section of numpy.
+
+\textbf{NB:} .reshape(n,m,l) ; n*m*l is must be equal to the number of elements in the array!
+
+
+
+\chapter{Array Iteration}
+Iterating means going through elements one by one. \\
+
+As we deal with multi-dimensional arrays in numpy, we can do this using basic for loop of python. \\
+
+If we iterate on a 1-D array it will go through each element one by one.\\
+
+In a 2-D array it will go through all the row also the elements. To get only the rows, use only the first iteration. \\
+
+In a d-D array it will go through all the row also the elements. To get only the rows, use  first two iterations.
+
+
+\begin{tabular}{|p{4cm}|p{6cm}|p{8.5cm}|}
+    \hline
+    1-D & 2-D & 3-D \\
+    \hline
+arr = np.array([1, 2, 3]) &  arr = np.array([[1, 2, 3], [4, 5, 6]]) &     arr = np.array([[[1, 2, 3], [4, 5, 6]], [[7, 8, 9], [10, 11, 12]]]) \\
+for x in arr: & for x in arr: & for x in arr:\\
+print(x) & for y in x: & for y in x: \\
+& print(y) & for z in y \\
+& & print(z) \\
+\hline
+\end{tabular}\\
+
+
+Here for multidimensional array we need to write the loop again and again. To overcome this problem, we h ave \textbf(.nditer()) method. It go throuugh all the array and return all the element at a time. \\
+
+\section{Iterate with different Data Type}
+We can use \texttt{op\_dtypes} argument and pass it the expected datatype to change the datatype of elements while iterating.
+NumPy does not change the data type of the element in-place (where the element is in array) so it needs some other space to perform this action, that extra space is called buffer, and in order to enable it in \texttt{nditer()} we pass \texttt{flags=['buffered']}.
+
+\begin{lstlisting}[language=Python]
+import numpy as np
+
+arr = np.array([1, 2, 3])
+
+for x in np.nditer(arr, flags=['buffered'], opdtypes=['S']):
+    print(x)
+\end{lstlisting}
+
+\section{Iterating with Different Step size}
+Iterate through every scalalar element of the 2D array skipping 1 elements.\\
+arr = np.array([[1, 2, 3, 4], [5, 6, 7, 8]])\\
+
+for x in np.nditer(arr[:, ::2]):\\
+  print(x)
+
+\section{Enumerated Iteration}
+Enumeration means mentioning sequence number of somethings one by one.
+
+Sometimes we require corresponding index of the element while iterating, the ndenumerate() method can be used for those usecases. \\
+It returns element mentioining the position no. of each element. \\
+\begin{lstlisting}[language=Python]
+    import numpy as np
+
+arr = np.array([1, 2, 3])
+
+for x in np.nditer(arr, flags=['buffered'], op_dtypes=['S']):
+  print(x)
+\end{lstlisting}
+
+
+\chapter{Array Joining}
+Joining means putting contents of two or more arrays in a single array. We pass a sequence of arrays that we want to join to the concatenate() function, along with the axis. If axis is not explicitly passed, it is taken as 0. \\
+
+
+\begin{table}[htbp]
+    \centering
+    \begin{tabular}{|p{2cm}|p{10cm}|p{4cm}|}
+        \hline
+        Method & Example & Result \\
+        \hline
+        General Concatenate & \texttt{print("real concatenate", np.concatenate((arr, arr2)))} & [[1 2] [3 4] [5 6] [7 8]] \\ \hline
+        Concatenate & \texttt{print("concatenate:", np.concatenate((arr, arr2), axis=1))} & [[1 2 5 6] [3 4 7 8]] \\  \hline
+        Stack & \texttt{print("Stack:", np.stack((arr, arr2), axis=1))} & [[[1 2] [5 6]] [[3 4] [7 8]]] \\ \hline
+        hstack & \texttt{print("hstack", np.hstack((arr, arr2)))} & [[1 2 5 6] [3 4 7 8]] \\ \hline
+        vstack & \texttt{print("vstack", np.vstack((arr, arr2)))} & [[1 2] [3 4] [5 6] [7 8]] \\ \hline
+        dstack & \texttt{print("dstack", np.dstack((arr, arr2)))} & [[[1 5] [2 6]] [[3 7] [4 8]]] \\ \hline
+        \hline
+    \end{tabular}
+    \caption{Methods and their results}
+    \label{tab:methods_results}
+\end{table}
 
 \chapter{In Brief}
 
@@ -219,7 +366,15 @@ newarr = arr.astype("i")
     \item To show the original array $\rightarrow$ variable.view()
     \item To check that an array owns the data from another one $\rightarrow$ variable.base $\rightarrow$ it will return \textbf{None} if it owns otherwise it will return the original object
     \item To know the shape/size of an array $\rightarrow$ variable.shape
+    \item To reshape 2-D array $\rightarrow$ var.reshape(2,n) or reshahpe(2,-1)
+    \item To reshape 3-D array $\rightarrow$ var.reshape(2,2,n) or reshahpe(2,2,-1)
+    \item To reshape from multi-D to 1-D $\rightarrow$ var.reshape(-1)
+    \item Iterating in Multi-D $\rightarrow$ for x in np.nditer(arr)
+    \item Iterating with different step size $\rightarrow$ for x in np.nditer(arr[:,::2])
+    \item Enumerated iteration $\rightarrow$ for idx,x in np.ndenumerate(arr)
+    \item Iterating and also changing data types $\rightarrow$ for x in np.nditer(arr, flags=['buffered'], op\_dtypes=['S'])
 \end{enumerate}
+
 \newpage
 
 \section{Rights}
