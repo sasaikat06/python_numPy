@@ -1,6 +1,8 @@
 \documentclass[openany]{book}
 \usepackage{hyperref}
 \usepackage{listings}
+\usepackage{titlesec}
+\usepackage{emoji}
 \setcounter{secnumdepth}{3}
 \setcounter{tocdepth}{3}
 \usepackage{geometry}
@@ -20,7 +22,8 @@
 
 \title{Numerical Python}
 \author{Shishir Ahmed Saikat}
-\date{\today}
+% \date{\today\quad\DTMcurrenttime}
+\usepackage{datetime2}
 \begin{document}
 
 \frontmatter % 
@@ -347,6 +350,83 @@ Joining means putting contents of two or more arrays in a single array. We pass 
     \label{tab:methods_results}
 \end{table}
 
+\chapter{Array Split,Sorting \& Filtering}
+\section{Split}
+
+
+\section{Sorting}
+Sorting means putting elements in an ordered sequence. \\
+Odered sequence is any sequence that has an order corresponding to elements, like \textit{numeric or alphabetical or boolean}, ascending or descending. \\
+The NumPy ndarray object has a function called sort(), that will sort specified array. \\
+
+Syntax: np.sort(variable) \\
+
+This method returns a copy of the array, leaving the original array unchanged. Here, \texttt{print(variable.base)} will return \textbf{None} emoji{wink} ;) \\
+
+For 2-D array the sort() method works individually. First sort the first array( index 0), then sort the next! and then return an array. \\
+
+For boolean array it orders "False" value first and then the "True" value!
+
+
+\section{Filtering}
+Gettting some elements out of  an existing array and creating a new array out of them is callled filtering. \\
+In NumPy, we filter an array using a boolean index list. \\
+\textbf{Boolean Index List:} It is a list of booleand corresponding to indexes in the array. \\
+If the value at an index is True that element is contained in the filtered array, if the value at that index is False that element is excluded from the filtered array.\\
+Example:\\
+arr = np.array([13,5,6,76])\\
+
+check = [True,False,True,False]\\
+print(arr[check])\\
+
+It willl return us 13,5 \\
+
+We can filter in this ususa or using loop or Directly; \\
+\underline{Using Loop}
+
+\begin{lstlisting}[language=Python]
+    filter_arr = []
+    
+    for element in arr:
+
+      if element > 42:
+        filter_arr.append(True)
+      else:
+        filter_arr.append(False)
+    
+    newarr = arr[filter_arr]
+    
+    print(filter_arr)
+    print(newarr)
+    \end{lstlisting}
+
+\underline{Directly from Array}
+
+\begin{lstlisting}[language=Python]
+    arr = np.array([32,43,54,55])
+    filterArr = arr>43
+    newarr = arr[filterArr]
+
+    print(newarr)
+\end{lstlisting}
+    
+\end{lstlisting}
+\chapter{Searchin Arrays}
+\section{where()}
+We can search an element where it is located. If the element has multiple index , this method will return all of the indeces. \\
+eg: np.where(variable == 4) \\
+We can find the indices where the elements are even or odd \dots \\
+
+\section{searchsorted()}
+Here, there is an another method called \textit{searchsorted()} . It used for insert an number in a/more place , where if we insert it ,it will maintain the search order. \\
+
+Suppose we have an arra like [ 4,5,6,7,8], now we want to insert 3. here if we use searchsorted method it will return the specified value (here 0) would be inserted to maintainthe search order. \\
+
+Syntax: np.searchsorted(variable, 3) \\
+Serching from left side is default, but we can search it from right side too. To do that just use \textit(side='right') after the number.\\ Syntax: np.searchsorted(variable,3, side='right') \\
+
+Also, we can do it for multiple elemnts at a time. np.searchsorted(variable,[56,7,1])
+
 \chapter{In Brief}
 
 \begin{enumerate}
@@ -373,6 +453,11 @@ Joining means putting contents of two or more arrays in a single array. We pass 
     \item Iterating with different step size $\rightarrow$ for x in np.nditer(arr[:,::2])
     \item Enumerated iteration $\rightarrow$ for idx,x in np.ndenumerate(arr)
     \item Iterating and also changing data types $\rightarrow$ for x in np.nditer(arr, flags=['buffered'], op\_dtypes=['S'])
+    \item To split 1D-Array $\rightarrow$ \lstinline{np.array_split(arr, 3)}
+    \item To know the location/index of an element $\rightarrow$ np.where(variable == n)
+    \item If we want to insert one or multiple element maintaining order $\rightarrow$ np.searchsorted(variable,n) ; for multiple $\rightarrow$ np.searchsorted(variable, [n,m,l, \dots])
+    \item To sort $\rightarrow$ np.sort(array)
+    \item To filter $\rightarrow$ It works taking True and False values
 \end{enumerate}
 
 \newpage

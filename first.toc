@@ -17,7 +17,7 @@
 \contentsline {chapter}{\numberline {3}Data Types}{6}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Data Types in Python}{6}{section.3.1}%
 \contentsline {section}{\numberline {3.2}Data Types in NumPy}{6}{section.3.2}%
-\contentsline {paragraph}{NumPy has some extra data types, and refer to data types with one character, like \textit {i} for integer, \textit {u} for unsigned integers etc.}{6}{section*.2}%
+\contentsline {paragraph}{NumPy has some extra data types, and refer to data types with one character, like \textit {i} for integer, \textit {u} for unsigned integers etc.}{6}{section.3.2}%
 \contentsline {chapter}{\numberline {4}Array Shape}{8}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Shape of Array}{8}{section.4.1}%
 \contentsline {section}{\numberline {4.2}Array Reshaping}{8}{section.4.2}%
@@ -30,6 +30,13 @@
 \contentsline {section}{\numberline {5.2}Iterating with Different Step size}{11}{section.5.2}%
 \contentsline {section}{\numberline {5.3}Enumerated Iteration}{11}{section.5.3}%
 \contentsline {chapter}{\numberline {6}Array Joining}{12}{chapter.6}%
-\contentsline {chapter}{\numberline {7}In Brief}{13}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Rights}{14}{section.7.1}%
-\contentsline {paragraph}{The contents of this PDF are largely derived (approximately 98\%) from W3Schools. It is not intended for commercial use; rather, I have compiled it as personal study notes. Feel free for anyone to read or integrate this material.}{14}{section*.4}%
+\contentsline {chapter}{\numberline {7}Array Split,Sorting \& Filtering}{13}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Split}{13}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Sorting}{13}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Filtering}{13}{section.7.3}%
+\contentsline {chapter}{\numberline {8}Searchin Arrays}{15}{chapter.8}%
+\contentsline {section}{\numberline {8.1}where()}{15}{section.8.1}%
+\contentsline {section}{\numberline {8.2}searchsorted()}{15}{section.8.2}%
+\contentsline {chapter}{\numberline {9}In Brief}{16}{chapter.9}%
+\contentsline {section}{\numberline {9.1}Rights}{18}{section.9.1}%
+\contentsline {paragraph}{The contents of this PDF are largely derived (approximately 98\%) from W3Schools. It is not intended for commercial use; rather, I have compiled it as personal study notes. Feel free for anyone to read or integrate this material.}{18}{section.9.1}%
